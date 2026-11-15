@@ -105,7 +105,7 @@
       } catch (e) {
         if (paths.length) sb.storage.from(BUCKET).remove(paths).catch(() => {});
         if (/bucket not found|screenshots.*column|column.*screenshots/i.test(e?.message || '')) {
-          throw new Error('Screenshots are not set up yet. Run supabase/002_screenshots.sql in the Supabase SQL editor, then try again.');
+          throw new Error('Screenshots are not set up yet. Run db/002_screenshots.sql in the Supabase SQL editor, then try again.');
         }
         throw e;
       }

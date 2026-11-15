@@ -8,7 +8,7 @@ A static website (no build step) with a Supabase backend for accounts and cloud 
 | `app.html` | The journal app: page layout and styles |
 | `app.js` | App logic and the data layer (Supabase, or browser storage as a fallback) |
 | `config.js` | Your Supabase URL and anon key |
-| `supabase/schema.sql` | Database tables and security rules |
+| `db/schema.sql` | Database tables and security rules |
 
 ## Modes
 
@@ -19,7 +19,7 @@ A static website (no build step) with a Supabase backend for accounts and cloud 
 ## Connect Supabase (about 5 minutes)
 
 1. Create a free project at <https://supabase.com/dashboard>.
-2. In the project, open **SQL Editor → New query**, paste all of `supabase/schema.sql`, and click **Run**.
+2. In the project, open **SQL Editor → New query**, paste all of `db/schema.sql`, and click **Run**.
 3. Open **Project Settings → API** and copy the **Project URL** and the **anon / publishable** key.
    Do not use the `service_role` / secret key — it bypasses security and must never go in a website.
 4. Paste both into `config.js`.
@@ -39,5 +39,5 @@ Then open <http://localhost:4317> for the landing page, or <http://localhost:431
 
 ## Deploy
 
-Upload the four files (keeping the `supabase/` folder is optional) to any static host:
+Upload the four files (keeping the `db/` folder is optional) to any static host:
 Netlify, Vercel, Cloudflare Pages or GitHub Pages. Then update the Site URL in step 5.
